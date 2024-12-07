@@ -1,0 +1,161 @@
+[07-Dec-2024 00:01:06 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:01:07 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:02:22 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:05:40 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:06:28 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:06:29 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:06:33 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:06:36 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:06:40 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 00:06:43 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 11:42:19 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 12:41:20 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 12:41:20 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 14:13:28 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 14:13:29 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 14:13:30 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 14:21:53 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 14:21:54 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 19:53:04 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 19:58:54 Asia/Dhaka] PHP Warning:  include(/header.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/user/services.php on line 18
+[07-Dec-2024 19:58:54 Asia/Dhaka] PHP Warning:  include(): Failed opening '/header.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/user/services.php on line 18
+[07-Dec-2024 19:58:54 Asia/Dhaka] PHP Warning:  include(/footer.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/user/services.php on line 170
+[07-Dec-2024 19:58:54 Asia/Dhaka] PHP Warning:  include(): Failed opening '/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/user/services.php on line 170
+[07-Dec-2024 20:05:43 Asia/Dhaka] PHP Deprecated:  Unparenthesized `a ? b : c ? d : e` is deprecated. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` in /home/domhoste/rent.shunlocker.com/user/order_history.php on line 177
+[07-Dec-2024 20:05:43 Asia/Dhaka] PHP Deprecated:  Unparenthesized `a ? b : c ? d : e` is deprecated. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` in /home/domhoste/rent.shunlocker.com/user/order_history.php on line 229
+[07-Dec-2024 20:06:06 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:06:08 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:06:09 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:06:13 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:06:45 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:13:39 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:14:58 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:17:16 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:17:17 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:17:22 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:17:33 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9
+[07-Dec-2024 20:21:53 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''6'' at line 1 in /home/domhoste/rent.shunlocker.com/user/load_announcements.php:9
+Stack trace:
+#0 /home/domhoste/rent.shunlocker.com/user/load_announcements.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/user/load_announcements.php on line 9

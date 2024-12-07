@@ -1,0 +1,2 @@
+[27-Nov-2024 23:21:46 Asia/Kolkata] PHP Warning:  mysqli_prepare() expects parameter 1 to be mysqli, object given in /home/domhoste/rent.shunlocker.com/new/user/process_payment.php on line 14
+[27-Nov-2024 23:21:46 Asia/Kolkata] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, object given in /home/domhoste/rent.shunlocker.com/new/user/process_payment.php on line 28

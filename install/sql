@@ -1,0 +1,164 @@
+<?php
+// Database connection settings
+$host = 'localhost'; // Database host
+$dbname = 'domhoste_test'; // Database name
+$username = 'root'; // Database username (adjust accordingly)
+$password = 'domhoste_test'; // Database password (adjust accordingly)
+
+try {
+    // Connect to the database using PDO
+    $conn = new PDO("mysql:host=$host", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Create the database if it doesn't exist
+    $conn->exec("CREATE DATABASE IF NOT EXISTS $dbname");
+    
+    // Select the database to use
+    $conn->exec("USE $dbname");
+
+    // SQL dump (from the provided SQL script)
+    $sql = "
+    CREATE TABLE IF NOT EXISTS `categories` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `name` varchar(255) NOT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+    CREATE TABLE IF NOT EXISTS `credit_transfers` (
+      `user_id_fk` int(11) NOT NULL,
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `sender_id` int(11) DEFAULT NULL,
+      `receiver_id` int(11) DEFAULT NULL,
+      `amount` decimal(10,2) DEFAULT NULL,
+      `transfer_date` timestamp NOT NULL DEFAULT current_timestamp(),
+      `transfer_type` enum('deposit','withdrawal') NOT NULL,
+      PRIMARY KEY (`id`),
+      KEY `sender_id` (`sender_id`),
+      KEY `receiver_id` (`receiver_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+    CREATE TABLE IF NOT EXISTS `credit_usage` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `user_id_fk` int(11) NOT NULL,
+      `credits_used` decimal(10,2) NOT NULL,
+      `usage_date` datetime NOT NULL,
+      PRIMARY KEY (`id`),
+      KEY `user_id_fk` (`user_id_fk`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+    CREATE TABLE IF NOT EXISTS `generated_tools` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `user_id` int(11) NOT NULL,
+      `tool_name` varchar(255) NOT NULL,
+      `tool_username` varchar(255) NOT NULL,
+      `tool_password` varchar(255) NOT NULL,
+      `tool_cost` decimal(10,2) NOT NULL,
+      `generated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+      PRIMARY KEY (`id`),
+      KEY `user_id` (`user_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+    CREATE TABLE IF NOT EXISTS `manual_payments` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `user_id` int(11) NOT NULL,
+      `transaction_id` varchar(255) NOT NULL,
+      `amount` decimal(10,2) NOT NULL,
+      `status` enum('pending','approved','rejected') DEFAULT 'pending',
+      `created_at` timestamp NULL DEFAULT current_timestamp(),
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+    CREATE TABLE IF NOT EXISTS `notifications` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `message` text NOT NULL,
+      `user_id` int(11) DEFAULT NULL,
+      `created_at` timestamp NULL DEFAULT current_timestamp(),
+      `status` enum('unread','read') DEFAULT 'unread',
+      PRIMARY KEY (`id`),
+      KEY `user_id` (`user_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+    CREATE TABLE IF NOT EXISTS `password_resets` (
+      `email` varchar(255) NOT NULL,
+      `token` varchar(64) NOT NULL,
+      `expiry` datetime NOT NULL,
+      PRIMARY KEY (`token`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+    CREATE TABLE IF NOT EXISTS `payments` (
+      `payment_id` int(11) NOT NULL AUTO_INCREMENT,
+      `user_id` int(11) NOT NULL,
+      `payment_date` timestamp NULL DEFAULT current_timestamp(),
+      `payment_method` varchar(50) DEFAULT NULL,
+      `payment_amount` decimal(10,2) DEFAULT NULL,
+      `payment_status` varchar(50) DEFAULT 'Pending',
+      `transaction_reference` varchar(100) DEFAULT NULL,
+      PRIMARY KEY (`payment_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+    CREATE TABLE IF NOT EXISTS `settings` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `name` varchar(255) NOT NULL,
+      `value` text NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE KEY `name` (`name`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+    CREATE TABLE IF NOT EXISTS `smtp_settings` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `host` varchar(128) NOT NULL,
+      `username` varchar(128) NOT NULL,
+      `password` varchar(128) NOT NULL,
+      `secure` varchar(10) DEFAULT NULL,
+      `port` int(11) NOT NULL,
+      `from_name` varchar(128) NOT NULL,
+      `from_email` varchar(128) NOT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+    CREATE TABLE IF NOT EXISTS `tools` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `tool_name` varchar(255) NOT NULL,
+      `tool_username` varchar(255) NOT NULL,
+      `tool_password` varchar(255) NOT NULL,
+      `category` varchar(255) NOT NULL,
+      `tool_cost` decimal(10,2) NOT NULL,
+      `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+      `credit_usage` int(11) NOT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+    CREATE TABLE IF NOT EXISTS `users` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `email` varchar(255) DEFAULT NULL,
+      `username` varchar(255) NOT NULL,
+      `password` varchar(255) NOT NULL,
+      `role` enum('admin','user') DEFAULT 'user',
+      `banned` tinyint(1) NOT NULL,
+      `balance` decimal(10,2) DEFAULT 0.00,
+      `last_active` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+      `group` varchar(255) NOT NULL,
+      `name` varchar(255) DEFAULT NULL,
+      `address` text DEFAULT NULL,
+      `phone` varchar(20) DEFAULT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE KEY `email` (`email`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+    CREATE TABLE IF NOT EXISTS `user_tools` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `user_id` int(11) DEFAULT NULL,
+      `tool_id` int(11) DEFAULT NULL,
+      `generated_at` datetime DEFAULT current_timestamp(),
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+    ";
+
+    // Execute the SQL
+    $conn->exec($sql);
+
+    echo "Database and tables have been successfully created!";
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>

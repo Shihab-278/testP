@@ -1,0 +1,153 @@
+
+ styles.css */
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Info Box styles */
+.info-box {
+    position: relative;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    background: #fff;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
+footer {
+    background: #212529;
+    color: white;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Added ease-in-out for smooth transition */
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.dot-nav {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #bbb;
+    transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Summary Section */
+.summary-section {
+    background-color: #f8f9fa;
+}
+
+/* Available Tools Section */
+.card-body {
+    text-align: center;
+}
+
+/* styles.css */
+body {
+    background: #f5f7fa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 1.5rem;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #007bff;
+}
+
+.btn-primary {
+    background: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.text-muted a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.text-muted a:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+}
+

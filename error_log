@@ -1,0 +1,38 @@
+[07-Dec-2024 20:02:27 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/imei.php on line 3
+[07-Dec-2024 20:02:27 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/imei.php on line 3
+[07-Dec-2024 20:02:27 Asia/Dhaka] PHP Warning:  include(): Failed opening '../db.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/imei.php on line 3
+[07-Dec-2024 20:02:27 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/domhoste/rent.shunlocker.com/imei.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/domhoste/rent.shunlocker.com/imei.php on line 6
+[07-Dec-2024 20:02:47 Asia/Dhaka] PHP Warning:  include(../includes/header.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/imei.php on line 18
+[07-Dec-2024 20:02:47 Asia/Dhaka] PHP Warning:  include(../includes/header.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/imei.php on line 18
+[07-Dec-2024 20:02:47 Asia/Dhaka] PHP Warning:  include(): Failed opening '../includes/header.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/imei.php on line 18
+[07-Dec-2024 20:02:47 Asia/Dhaka] PHP Warning:  include(../includes/footer.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/imei.php on line 170
+[07-Dec-2024 20:02:47 Asia/Dhaka] PHP Warning:  include(../includes/footer.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/imei.php on line 170
+[07-Dec-2024 20:02:47 Asia/Dhaka] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/imei.php on line 170
+[07-Dec-2024 20:02:58 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:02:58 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:02:58 Asia/Dhaka] PHP Warning:  include(): Failed opening '../db.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:02:58 Asia/Dhaka] PHP Warning:  include(../includes/footer.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/imei.php on line 170
+[07-Dec-2024 20:02:58 Asia/Dhaka] PHP Warning:  include(../includes/footer.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/imei.php on line 170
+[07-Dec-2024 20:02:58 Asia/Dhaka] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/imei.php on line 170
+[07-Dec-2024 20:03:32 Asia/Dhaka] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/domhoste/rent.shunlocker.com/header.php on line 2
+[07-Dec-2024 20:03:32 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:03:32 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:03:32 Asia/Dhaka] PHP Warning:  include(): Failed opening '../db.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:03:36 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:03:36 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:03:36 Asia/Dhaka] PHP Warning:  include(): Failed opening '../db.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:03:41 Asia/Dhaka] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/domhoste/rent.shunlocker.com/header.php on line 2
+[07-Dec-2024 20:03:41 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:03:41 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:03:41 Asia/Dhaka] PHP Warning:  include(): Failed opening '../db.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:05:16 Asia/Dhaka] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/domhoste/rent.shunlocker.com/header.php on line 2
+[07-Dec-2024 20:05:16 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:05:16 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:05:16 Asia/Dhaka] PHP Warning:  include(): Failed opening '../db.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:06:23 Asia/Dhaka] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/domhoste/rent.shunlocker.com/header.php on line 2
+[07-Dec-2024 20:06:23 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:06:23 Asia/Dhaka] PHP Warning:  include(../db.php): failed to open stream: No such file or directory in /home/domhoste/rent.shunlocker.com/header.php on line 3
+[07-Dec-2024 20:06:23 Asia/Dhaka] PHP Warning:  include(): Failed opening '../db.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/domhoste/rent.shunlocker.com/header.php on line 3
