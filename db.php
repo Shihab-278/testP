@@ -2,8 +2,8 @@
 // Database connection settings
 $host = 'localhost';  // Your database host (e.g., localhost or IP address)
 $dbname = 'domhoste_test';  // Your database name
-$username = 'domhoste_test';  // Your database username
-$password = 'domhoste_test';  // Your database password
+$username = 'root';  // Your database username
+$password = '';  // Your database password
 
 try {
     // Create a new PDO instance and establish the connection
