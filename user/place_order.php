@@ -318,45 +318,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="container-fluid mt-3 px-5">
         <!-- Dropdown Menu -->
-        <div class="bg-custom rounded">
-            <div class="row mt-2 p-4">
-                <div class="col-12">
-                    <div class="dropdown">
-                        <button
-                            class="btn btn-secondary dropdown-toggle w-100 text-start"
-                            type="button"
-                            id="dropdownMenuButton"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Service Groups
-                        </button>
+        <div class="container-fluid mt-3 px-5">
+            <!-- Search Bar -->
+            <div class="mb-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="serviceSearch"
+                    placeholder="Search Services"
+                    onkeyup="filterServices()">
+            </div>
 
-                        <div class="dropdown-menu dropdown-menu-start bg-white text-dark p-3" style="width: 250px;" aria-labelledby="dropdownMenuButton">
-                            <!-- Search Box -->
-                            <input
-                                type="text"
-                                class="form-control mb-2"
-                                id="groupSearch"
-                                placeholder="Search Groups"
-                                onkeyup="searchGroup()">
+            <!-- Dropdown Menu -->
+            <div class="bg-custom rounded">
+                <div class="row mt-2 p-4">
+                    <div class="col-12">
+                        <div class="dropdown">
+                            <button
+                                class="btn btn-secondary dropdown-toggle w-100 text-start"
+                                type="button"
+                                id="dropdownMenuButton"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Service Groups
+                            </button>
 
-                            <!-- Group List -->
+                            <div class="dropdown-menu dropdown-menu-start bg-white text-dark p-3" style="width: 250px;" aria-labelledby="dropdownMenuButton">
+                                <!-- Search Box -->
+                                <input
+                                    type="text"
+                                    class="form-control mb-2"
+                                    id="groupSearch"
+                                    placeholder="Search Groups"
+                                    onkeyup="searchGroup()">
 
-
-                            <ul class="list-group" id="groupList">
-                                <?php foreach ($groups as $group): ?>
-                                    <li class="list-group-item list-group-item-action" onclick="loadServices(<?php echo $group['id']; ?>)">
-                                        <?php echo htmlspecialchars($group['name']); ?>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-
-
+                                <!-- Group List -->
+                                <ul class="list-group" id="groupList">
+                                    <?php foreach ($groups as $group): ?>
+                                        <li class="list-group-item list-group-item-action" onclick="loadServices(<?php echo $group['id']; ?>)">
+                                            <?php echo htmlspecialchars($group['name']); ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- End Dropdown Menu -->
         </div>
+
 
 
         <!-- End Dropdown Menu -->
@@ -432,42 +443,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <script>
+        let allServices = [];
         // Load services based on selected group
         function loadServices(groupId) {
-            const selectedGroupName = document.querySelector(`#groupList li[onclick*="${groupId}"]`).textContent;
-            document.getElementById('selected-group-name').textContent = `Group: ${selectedGroupName}`;
+    const selectedGroupName = document.querySelector(`#groupList li[onclick*="${groupId}"]`).textContent;
+    document.getElementById('selected-group-name').textContent = `Group: ${selectedGroupName}`;
 
-            fetch('?group_id=' + groupId)
-                .then(response => response.json())
-                .then(services => {
-                    let serviceList = document.getElementById('service-list');
+    fetch('?group_id=' + groupId)
+        .then(response => response.json())
+        .then(services => {
+            allServices = services; // Store all services globally
+            displayServices(services); // Display services
+        })
+        .catch(error => console.error('Error loading services:', error));
+}
 
-                    // Clear existing services
-                    serviceList.innerHTML = '';
+// Function to display services
+function displayServices(services) {
+    const serviceList = document.getElementById('service-list');
+    serviceList.innerHTML = '';
 
-                    if (services.length > 0) {
-                        services.forEach(service => {
-                            const serviceItem = document.createElement('div');
-                            serviceItem.classList.add('list-group-item', 'p-3', 'mb-2', 'border', 'rounded'); // Bootstrap styling
+    if (services.length > 0) {
+        services.forEach(service => {
+            const serviceItem = document.createElement('div');
+            serviceItem.classList.add('list-group-item', 'p-3', 'mb-2', 'border', 'rounded'); // Bootstrap styling
+            serviceItem.style.cursor = 'pointer';
 
-                            serviceItem.style.cursor = 'pointer';
-                            serviceItem.onclick = () => selectService(service.id, service.name, service.price, service.delivery_time);
+            serviceItem.onclick = () => selectService(service.id, service.name, service.price, service.delivery_time);
 
-                            serviceItem.innerHTML = `
-                        <h5 class="text-primary mb-1">${service.name}</h5>
-                        <p class="mb-1 text-muted">Price: $${service.price}</p>
-                        <p class="mb-1 text-muted">${service.description}</p>
-                        <p class="text-info"><strong>Delivery Time:</strong> ${service.delivery_time}</p>
-                    `;
+            serviceItem.innerHTML = `
+                <h5 class="text-primary mb-1">${service.name}</h5>
+                <p class="mb-1 text-muted">Price: $${service.price}</p>
+                <p class="mb-1 text-muted">${service.description}</p>
+                <p class="text-info"><strong>Delivery Time:</strong> ${service.delivery_time}</p>
+            `;
 
-                            serviceList.appendChild(serviceItem);
-                        });
-                    } else {
-                        serviceList.innerHTML = '<p class="text-muted">No services available for this group.</p>';
-                    }
-                })
-                .catch(error => console.error('Error loading services:', error));
-        }
+            serviceList.appendChild(serviceItem);
+        });
+    } else {
+        serviceList.innerHTML = '<p class="text-muted">No services available for this group.</p>';
+    }
+}
 
 
         // Select a service and fetch its required fields
@@ -517,6 +533,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     item.style.display = 'none';
                 }
             }
+        }
+
+        function filterServices() {
+            const query = document.getElementById('serviceSearch').value.toLowerCase();
+
+            // Filter services that include the query in their name
+            const filteredServices = allServices.filter(service =>
+                service.name.toLowerCase().includes(query)
+            );
+
+            // Update the service list with the filtered results
+            displayServices(filteredServices);
         }
     </script>
 </body>
