@@ -49,10 +49,10 @@
     <div class="top-header">
         <span>Welcome to Our Dashboard! <a href="contact.php">Contact Support</a> | <a href="faq.php">FAQ</a></span>
     </div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top ">
+        <div class="container-fluid px-4">
             <a class="navbar-brand" href="#">
-                <img src="../user/img/logo.png" alt="Logo" class="img-fluid rounded-circle" width="40" height="24">
+                <img src="../user/img/logo.png" alt="Logo" class="img-fluid rounded-circle" width="50" height="30">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -100,7 +100,7 @@
                     </li>
 
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item me-3 dropdown">
                         <a class="nav-link dropdown-toggle nav-button" href="#" role="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user-circle"></i> Profile
                         </a>

@@ -193,7 +193,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             z-index: 1000;
         }
 
+        #service-list {
+            max-height: 300px;
+            /* Limit the height of the card body */
+            overflow-y: auto;
+            /* Enable vertical scroll when content overflows */
+        }
 
+        .list-group-item {
+            transition: background-color 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            background-color: #f1f1f1;
+            /* Highlight effect on hover */
+        }
 
         body {
             padding-top: 70px;
@@ -302,7 +316,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php include 'header.php'; ?>
 
-    <div class="container-fluid mt-3">
+    <div class="container-fluid mt-3 px-5">
         <!-- Dropdown Menu -->
         <div class="bg-custom rounded">
             <div class="row mt-2 p-4">
@@ -347,117 +361,114 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- End Dropdown Menu -->
 
+        <div class="container-fluid mt-3 px-5">
 
-        <!-- Services Section -->
-        <div class="row mt-4">
-            <div class="col-6">
-                <div class="card shadow-lg">
-                    <div class="card-header">
-                        <h5 class="card-title text-dark">Available Services</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <div id="service-list" class="row">
-                                    <!-- Services will appear here dynamically -->
+            <!-- Services Section -->
+            <div class="row mt-4">
+                <div class="col-6">
+                    <div class="card shadow-lg">
+                        <div class="card-header">
+                            <h4 class="card-title text-dark">Available Services</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 id="selected-group-name" class="text-dark" style="font-family: 'Lato', sans-serif; font-weight: bold;">Please select a Service group</h5>
+                                    <div id="service-list" class="row">
+
+                                        <!-- Services will appear here dynamically -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Services Section -->
+                <!-- End Services Section -->
 
 
-            <!-- Main Section -->
-            <div class="col-6">
-                <div class="content2 card shadow-lg">
-                    <div class="card-body text-center text-dark">
-                        <div class="order-section">
-                            <h1 class="text-center">Place Order</h1>
+                <!-- Main Section -->
+                <div class="col-6">
+                    <div class="content2 card shadow-lg">
+                        <div class="card-body text-center text-dark">
+                            <div class="order-section">
+                                <h1 class="text-center">Place Order</h1>
 
-                            <div class="alert alert-info">
-                                <strong>Your Current Credit: $<?php
-                                                                $stmt = $conn->prepare("SELECT credit FROM users WHERE id = ?");
-                                                                $stmt->execute([$_SESSION['user_id']]);
-                                                                $user = $stmt->fetch();
-                                                                echo number_format($user['credit'] ?? 0, 2);
-                                                                ?></strong>
-                            </div>
-
-                            <form method="POST" action="">
-                                <div class="mb-3">
-                                    <label for="service_id" class="form-label">Select Service</label>
-                                    <select name="service_id" class="form-control" id="service_id" required>
-                                        <option value="">Select Service</option>
-                                    </select>
+                                <div class="alert alert-info">
+                                    <strong>Your Current Credit: $<?php
+                                                                    $stmt = $conn->prepare("SELECT credit FROM users WHERE id = ?");
+                                                                    $stmt->execute([$_SESSION['user_id']]);
+                                                                    $user = $stmt->fetch();
+                                                                    echo number_format($user['credit'] ?? 0, 2);
+                                                                    ?></strong>
                                 </div>
 
-                                <div class="mb-3" id="required_fields"></div>
+                                <form method="POST" action="">
+                                    <div class="mb-3">
+                                        <label for="service_id" class="form-label">Select Service</label>
+                                        <select name="service_id" class="form-control" id="service_id" required>
+                                            <option value="">Select Service</option>
+                                        </select>
+                                    </div>
 
-                                <button type="submit" class="mb-3 btn btn-primary">Place Order</button>
-                            </form>
+                                    <div class="mb-3" id="required_fields"></div>
 
-                            <?php if (isset($response)) {
-                                echo "<div class='alert alert-info'>$response</div>";
-                            } ?>
+                                    <button type="submit" class="mb-3 btn btn-primary">Place Order</button>
+                                </form>
+
+                                <?php if (isset($response)) {
+                                    echo "<div class='alert alert-info'>$response</div>";
+                                } ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
     </div>
     <!--End Main Content Section -->
 
 
-    <script>
-        // Example function to search and filter groups
-        function searchGroup() {
-            const query = document.getElementById('groupSearch').value.toLowerCase();
-            const items = document.querySelectorAll('#groupList .list-group-item');
 
-            items.forEach(item => {
-                item.style.display = item.textContent.toLowerCase().includes(query) ? '' : 'none';
-            });
-        }
-    </script>
     <script>
         // Load services based on selected group
         function loadServices(groupId) {
+            const selectedGroupName = document.querySelector(`#groupList li[onclick*="${groupId}"]`).textContent;
+            document.getElementById('selected-group-name').textContent = `Group: ${selectedGroupName}`;
+
             fetch('?group_id=' + groupId)
                 .then(response => response.json())
                 .then(services => {
                     let serviceList = document.getElementById('service-list');
-                    let servicesCard = document.getElementById('servicesCard');
 
                     // Clear existing services
                     serviceList.innerHTML = '';
 
                     if (services.length > 0) {
                         services.forEach(service => {
-                            const serviceDiv = document.createElement('div');
-                            serviceDiv.classList.add('col-md-4', 'mb-3'); // Bootstrap grid for responsiveness
+                            const serviceItem = document.createElement('div');
+                            serviceItem.classList.add('list-group-item', 'p-3', 'mb-2', 'border', 'rounded'); // Bootstrap styling
 
-                            serviceDiv.innerHTML = `
-                        <div class="service-card p-3 border rounded bg-light h-100" style="cursor: pointer;" onclick="selectService(${service.id}, '${service.name}', ${service.price}, '${service.delivery_time}')">
-                            <h5 class="mb-2 text-primary">${service.name}</h5>
-                            <p class="mb-1 text-muted">Price: $${service.price}</p>
-                            <p class="mb-1 text-muted">${service.description}</p>
-                            <p class="text-info"><strong>Delivery Time:</strong> ${service.delivery_time}</p>
-                        </div>
+                            serviceItem.style.cursor = 'pointer';
+                            serviceItem.onclick = () => selectService(service.id, service.name, service.price, service.delivery_time);
+
+                            serviceItem.innerHTML = `
+                        <h5 class="text-primary mb-1">${service.name}</h5>
+                        <p class="mb-1 text-muted">Price: $${service.price}</p>
+                        <p class="mb-1 text-muted">${service.description}</p>
+                        <p class="text-info"><strong>Delivery Time:</strong> ${service.delivery_time}</p>
                     `;
-                            serviceList.appendChild(serviceDiv);
-                        });
 
-                        // Show services card
-                        servicesCard.classList.remove('d-none');
+                            serviceList.appendChild(serviceItem);
+                        });
                     } else {
-                        servicesCard.classList.add('d-none'); // Hide card if no services
+                        serviceList.innerHTML = '<p class="text-muted">No services available for this group.</p>';
                     }
                 })
                 .catch(error => console.error('Error loading services:', error));
         }
+
 
         // Select a service and fetch its required fields
         function selectService(serviceId, serviceName, price, deliveryTime) {
