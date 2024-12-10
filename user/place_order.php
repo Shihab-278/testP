@@ -170,14 +170,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Service Group and Service</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Service UI</title>
+
     <style>
         .top-header {
             position: fixed;
@@ -191,102 +193,76 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             z-index: 1000;
         }
 
+
+
         body {
             padding-top: 70px;
-            /* Prevents content from overlapping with the fixed header */
+            /* background-color: #1a1a2e; */
+            /* Dark blue background */
+            /* color: white; */
+            /* Text color */
         }
 
-        .sidebar {
-            /* position: fixed; */
-            /* top: 70px; */
-            left: 0;
-            /* height: calc(100% - 70px); */
-            height: 100%;
-            /* width: 250px; */
-            background-color: #f8f9fa;
-            padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
+        .dropdown-menu {
+            background-color: #162447;
+            /* Slightly lighter dark blue */
+            border: none;
         }
 
-        .sidebar h3 {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .sidebar .form-control {
-            margin-bottom: 15px;
-            border-radius: 20px;
-            padding: 12px 15px;
-        }
-
-        .list-group-item {
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            padding: 12px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .list-group-item:hover {
-            background-color: #007bff;
+        .dropdown-toggle {
+            background-color: #0f3460;
+            /* Dropdown button color */
             color: white;
-            transform: scale(1.05);
         }
 
-        .content {
-            /* margin-left: 270px; */
-            padding: 20px;
-        }
-
-        .order-section {
-            width: 60%;
-            /* Make it smaller */
-            margin: 20px auto;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card {
-            margin-bottom: 15px;
-        }
-
-        .service-item {
-            background-color: #f8f9fa;
+        .dropdown-menu .list-group-item {
+            background-color: white;
+            color: black;
+            border: 0px solid #0f3460;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
-        .service-item:hover {
-            background-color: #e2e6ea;
+        .dropdown-menu .list-group-item:hover {
+            background-color: gray;
+            /* Highlight color */
+            color: white;
         }
 
-        /* ====== */
-        .services-card {
+        .card {
+            background-color: #0f3460;
+            /* Card background */
+            color: white;
+            border: none;
+        }
+
+        .card-header {
+            background-color: #1a1a2e;
+            /* Header section */
+        }
+
+        .btn-primary {
+            background-color: #e94560;
+            /* Button color */
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #d62d52;
+            /* Darker red */
+        }
+
+        .alert-info {
+            background-color: #1a1a2e;
+            border: 1px solid #e94560;
+            color: white;
+        }
+
+        #servicesCard {
             display: none;
         }
 
-        .service-card {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: scale(1.05);
-        }
-
-        /* ======= */
-        .service-card .card-body {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card .card-body:hover {
-            transform: scale(1.05);
+        .content2 {
+            padding: 20px;
         }
 
         footer {
@@ -313,111 +289,139 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .success-message.hide {
             animation: fadeOut 1s ease-in-out forwards;
         }
+
+        .bg-custom {
+
+            background: #cacaca;
+
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Include the Header -->
     <?php include 'header.php'; ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-3">
         <!-- Dropdown Menu -->
-        <div class="row mt-2">
-            <div class="col-12">
-                <div class="dropdown">
-                    <button
-                        class="btn btn-secondary dropdown-toggle w-100 text-start"
-                        type="button"
-                        id="dropdownMenuButton"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Service Groups
-                    </button>
+        <div class="bg-custom rounded">
+            <div class="row mt-2 p-4">
+                <div class="col-12">
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-secondary dropdown-toggle w-100 text-start"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Service Groups
+                        </button>
 
-                    <div class="dropdown-menu w-100 p-3" aria-labelledby="dropdownMenuButton">
-                        <!-- Search Box -->
-                        <input
-                            type="text"
-                            class="form-control mb-2"
-                            id="groupSearch"
-                            placeholder="Search Groups"
-                            onkeyup="searchGroup()">
+                        <div class="dropdown-menu dropdown-menu-start bg-white text-dark p-3" style="width: 250px;" aria-labelledby="dropdownMenuButton">
+                            <!-- Search Box -->
+                            <input
+                                type="text"
+                                class="form-control mb-2"
+                                id="groupSearch"
+                                placeholder="Search Groups"
+                                onkeyup="searchGroup()">
 
-                        <!-- Group List -->
-                        <ul class="list-group" id="groupList">
-                            <?php foreach ($groups as $group): ?>
-                                <li class="list-group-item" onclick="loadServices(<?php echo $group['id']; ?>)">
-                                    <?php echo htmlspecialchars($group['name']); ?>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
+                            <!-- Group List -->
+
+
+                            <ul class="list-group" id="groupList">
+                                <?php foreach ($groups as $group): ?>
+                                    <li class="list-group-item list-group-item-action" onclick="loadServices(<?php echo $group['id']; ?>)">
+                                        <?php echo htmlspecialchars($group['name']); ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- End Dropdown Menu -->
+
 
         <!-- Services Section -->
         <div class="row mt-4">
-            <div class="col-12">
-                <div id="servicesCard" class="card shadow-lg d-none">
+            <div class="col-6">
+                <div class="card shadow-lg">
                     <div class="card-header">
-                        <h5 class="card-title">Available Services</h5>
+                        <h5 class="card-title text-dark">Available Services</h5>
                     </div>
                     <div class="card-body">
-                        <div id="service-list" class="row">
-                            <!-- Services will appear here dynamically -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="service-list" class="row">
+                                    <!-- Services will appear here dynamically -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- End Services Section -->
 
-        <!-- Main Content Section -->
-        <div class="row mt-4">
-            <div class="col-12">
+
+            <!-- Main Section -->
+            <div class="col-6">
                 <div class="content2 card shadow-lg">
-                    <div class="order-section">
-                        <h1 class="text-center">Place Order</h1>
+                    <div class="card-body text-center text-dark">
+                        <div class="order-section">
+                            <h1 class="text-center">Place Order</h1>
 
-                        <div class="alert alert-info">
-                            <strong>Your Current Credit: $<?php
-                                                            $stmt = $conn->prepare("SELECT credit FROM users WHERE id = ?");
-                                                            $stmt->execute([$_SESSION['user_id']]);
-                                                            $user = $stmt->fetch();
-                                                            echo number_format($user['credit'] ?? 0, 2);
-                                                            ?></strong>
-                        </div>
-
-                        <form method="POST" action="">
-                            <div class="mb-3">
-                                <label for="service_id" class="form-label">Select Service</label>
-                                <select name="service_id" class="form-control" id="service_id" required>
-                                    <option value="">Select Service</option>
-                                </select>
+                            <div class="alert alert-info">
+                                <strong>Your Current Credit: $<?php
+                                                                $stmt = $conn->prepare("SELECT credit FROM users WHERE id = ?");
+                                                                $stmt->execute([$_SESSION['user_id']]);
+                                                                $user = $stmt->fetch();
+                                                                echo number_format($user['credit'] ?? 0, 2);
+                                                                ?></strong>
                             </div>
 
-                            <div class="mb-3" id="required_fields"></div>
+                            <form method="POST" action="">
+                                <div class="mb-3">
+                                    <label for="service_id" class="form-label">Select Service</label>
+                                    <select name="service_id" class="form-control" id="service_id" required>
+                                        <option value="">Select Service</option>
+                                    </select>
+                                </div>
 
-                            <button type="submit" class="btn btn-primary">Place Order</button>
-                        </form>
+                                <div class="mb-3" id="required_fields"></div>
 
-                        <?php if (isset($response)) {
-                            echo "<div class='alert alert-info'>$response</div>";
-                        } ?>
+                                <button type="submit" class="mb-3 btn btn-primary">Place Order</button>
+                            </form>
+
+                            <?php if (isset($response)) {
+                                echo "<div class='alert alert-info'>$response</div>";
+                            } ?>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
-       
-
-
-
     </div>
+    <!--End Main Content Section -->
 
 
+    <script>
+        // Example function to search and filter groups
+        function searchGroup() {
+            const query = document.getElementById('groupSearch').value.toLowerCase();
+            const items = document.querySelectorAll('#groupList .list-group-item');
 
-
+            items.forEach(item => {
+                item.style.display = item.textContent.toLowerCase().includes(query) ? '' : 'none';
+            });
+        }
+    </script>
     <script>
         // Load services based on selected group
         function loadServices(groupId) {
